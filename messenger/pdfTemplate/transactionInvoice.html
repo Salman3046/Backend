@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world!</title>
+    <style>
+        th,
+        tr {
+            padding: 5px;
+        }
+
+        p {
+            margin: 2px auto;
+            font-weight: 300;
+        }
+
+        h5 {
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body
+    style="border: 2px solid rgba(0, 0, 255, 0.414); padding: 25px ; font-family: Calibri; font-weight: 300; margin: 20px;">
+    <div id="header">
+        <table style="width: 100%;">
+            <tr>
+                <th style="width: 50%;text-align: left;">
+                    <img src="https://sociomee-dev.s3.ap-south-1.amazonaws.com/test/O44XjdZCMNBOC.jpg"
+                        style="width: 150px; height: 75px;display: block;">
+                    <p>B-25 Vibhuti Khand<br>
+                        Lucknow , Uttar Pradesh , India <br>
+                        +91 7894561230
+                    </p>
+                </th>
+                <th style="text-align : left;">
+                    <h3>Transaction Invoice</h3>
+                    <p>Dated : {{transactionData.date}} {{transactionData.time}}</p>
+                    <p>Txn Id : {{transactionData.id}}</p>
+                    <!-- <p>{{user.name}}</p>
+                      <p>{{user.address}}</p>
+                      <p>{{user.country}}</p>
+                      <p>{{user.mobile}}</p> -->
+                </th>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <table style="width: 100%;">
+        <tr>
+            <th style="text-align : left;width: 50%;">
+                <h4>Invoice To :</h4>
+                <h4>{{transactionData.fullName}}</h4>
+                <p>{{transactionData.homeAddress}}</p>
+                <p>{{transactionData.mobile}}</p>
+            </th>
+            <th style="text-align : left;width: 50%;">
+                <h4>Payment Details :</h4>
+                <h4>{{transactionData.fullName}}</h4>
+                <p>{{transactionData.homeAddress}}</p>
+                <p>{{transactionData.mobile}}</p>
+            </th>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table style="width: 100%; text-align: left;padding: 5px;">
+        <tr style="font-weight: 500;border: 2px solid white; background-color: rgb(212, 207, 207); padding: 5px;">
+            <th>S.No.</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>ClosingBalance</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>{{transactionData.type}}</td>
+            <td>{{transactionData.amount}}</td>
+            <td>{{transactionData.description}}</td>
+            <td>{{transactionData.closingBalance}}</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

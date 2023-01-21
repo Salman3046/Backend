@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world!</title>
+    <style>
+        th,
+        tr {
+            padding: 5px;
+        }
+
+        p {
+            margin: 2px auto;
+            font-weight: 300;
+        }
+
+        h5 {
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body
+    style="border: 2px solid rgba(0, 0, 255, 0.414); padding: 25px ; font-family: Calibri; font-weight: 300; margin: 20px;">
+    <div id="header">
+        <table style="width: 100%;">
+            <tr>
+                <th style="width: 50%;text-align: left;">
+                    <img src="https://sociomee-dev.s3.ap-south-1.amazonaws.com/test/O44XjdZCMNBOC.jpg"
+                        style="object-fit: contain;height: 50px;">
+                    <p>B-25 Vibhuti Khand<br>
+                        Lucknow , Uttar Pradesh , India <br>
+                        +91 7894561230
+                    </p>
+                </th>
+                <th style="text-align : left;">
+                    <h3>Ad Invoice : adId : #{{adDetails.adId}}</h3>
+                    <p>Start time: <b>{{adDetails.startDate}}</b></p>
+                    <p>End Time   :  <b>{{adDetails.endDate}}</b></p>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <table style="width: 100%;">
+        <tr>
+            <th style="text-align : left;width: 50%;">
+                <h4>Invoice To :</h4>
+                <h4>{{adDetails.fullName}}</h4>
+                <p>{{adDetails.homeAddress}}</p>
+                <p>{{adDetails.mobile}}</p>
+                <br>
+                <p>Available Wallet Balance : <b>{{adDetails.currencyCode}} {{adDetails.amount}}</b></p>
+                <p>Total Freeze Balance : <b>{{adDetails.currencyCode}} {{adDetails.freezeAmount}}</b></p>
+            </th>
+            <th style="text-align : left;width: 50%;">
+                <h4>Payment Details :</h4>
+                <p>Total Bill Amount :<b>{{adDetails.totalAmountToBePaid}} {{adDetails.currencyCode}}</b></p>
+                <p>PAYMENT STATUS :<b>{{adDetails.isPaid}}</b></p>
+                <p>Amount Paid :<b>{{adDetails.totalAmountToBePaid}} {{adDetails.currencyCode}}</b></p>
+                <p>Paid By :<b>{{adDetails.paidTo}}</b></p>
+            </th>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table style="width: 100%; text-align: left;padding: 5px;">
+        <tr style="font-weight: 500;border: 2px solid white; background-color: rgb(212, 207, 207); padding: 5px;">
+            <th>S.No.</th>
+            <th>Campaign Name</th>
+            <th>Duration (in Days)</th>
+            <th>Daily Cost (in {{adDetails.currencyCode}})</th>
+            <th>Total (in {{adDetails.currencyCode}})</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>{{adDetails.description}}</td>
+            <td>{{adDetails.duration}}</td>
+            <td>{{adDetails.currencySymbols}} {{adDetails.dailyBudget}}</td>
+            <td>{{adDetails.currencySymbols}} {{adDetails.totalAmountToBePaid}}</td> 
+        </tr>
+    </table>
+
+</body>
+
+</html>

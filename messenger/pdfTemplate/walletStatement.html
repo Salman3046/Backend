@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello world!</title>
+    <style>
+      th,tr{
+        padding: 5px;
+      }
+      p{
+        margin: 2px auto;
+        font-weight: 300;
+      }
+      h5{
+        margin : 0px auto;
+      }
+    </style>
+  </head>
+  <body style="border: 2px solid rgba(0, 0, 255, 0.414); padding: 10px ; font-family: Calibri; font-weight: 300; margin: 20px;">
+      <div id="header">
+          <table style="width: 100%;">
+              <tr>
+                  <th style="width: 40%;">
+                      <img src="https://sociomee-dev.s3.ap-south-1.amazonaws.com/test/O44XjdZCMNBOC.jpg" style="width: 150px; height: 75px;display: block;margin : 0px auto">
+                      <p>B-25 Vibhuti Khand<br>
+                        Lucknow , Uttar Pradesh , India <br>
+                        +91 7894561230
+                    </p>
+                  </th>
+                  <th style="text-align : left;">
+                    <h5>To,</h5>
+                      <p>{{user.name}}</p>
+                      <p>{{user.address}}</p>
+                      <p>{{user.country}}</p>
+                      <p>{{user.mobile}}</p>
+                  </th>
+                  <th style="text-align : left; width: 33%;">
+                      <p>Wallet Id : <b>{{wallet.walletId}}</b></p>
+                      <p>Total Available Balance : <b>{{wallet.balance}}</b></p>
+                      <p>Total Freeze Balance : <b>{{wallet.freezeBalance}}</b></p>
+                      <p>Total Spent Amount : <b>{{wallet.spentAmount}}</b></p>
+                     <br>
+                     <p> From <b>{{date.from}}</b> to <b>{{date.to}}</b> </p>
+                  </th>
+              </tr>
+          </table>
+      </div>
+      <hr>
+      <table style="width: 90%; margin: auto auto 50px auto; text-align: left;">
+        <tr style="font-weight: 500;border: 2px solid white; background-color: rgb(212, 207, 207); padding: 5px;">
+          <th style="width: 20%;">Date & Time</th>
+          <th style="width: 50%;">Description</th>
+          <th style="width: 20%;">Amount</th>
+          <th style="width: 10%;">Type</th>
+        </tr>
+        {{#each transactionData}}
+        <tr style="margin: 5px 0px; border: 1px solid black;">
+          <td>
+            {{this.date}} - <br>
+            {{this.time}}
+          </td>
+          <td>
+            <span style="color: gray;">AD ID #{{this.adId}}</span><br>
+            {{this.description}}
+          </td>
+          <td>{{this.amount}}</td>
+          <td>{{this.type}}</td>
+        </tr>
+        {{/each}}
+      </table>
+      <p style="text-align:center">This is a system generated statement. Hence, it does not require any signature</p>
+  </body>
+</html>
