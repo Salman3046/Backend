@@ -1,0 +1,11 @@
+node_modules/
+public/
+!src/controllers/public/
+.env
+package-lock.json
+tempThumb/
+migrations
+migrations
+config
+TestDocument
+adExcel

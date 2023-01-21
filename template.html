@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <mate charest="utf-8" />
+  <title>Hello world!</title>
+</head>
+
+<body>
+  <h1>Ad Manager Insight</h1>
+  <ul>
+    {{#each users}}
+    <li>adId: {{this.adId}}</li>
+    <li>discriptions: {{this.discriptions}}</li>
+    <li>budgetAmount: {{this.budgetAmount}}</li>
+    <li>startDate: {{this.startDate}}</li>
+    <li>endDate: {{this.endDate}}</li>
+    <li>audience: {{this.audience}}</li>
+    <li>userId: {{this.userId}}</li>
+    <li>userName: {{this.userName}}</li>
+    <li>Reactions: {{this.Reactions}}</li>
+    <li>PostEngagements: {{this.PostEngagements}}</li>
+    <li>Comments: {{this.Comments}}</li>
+    <li>Shares: {{this.Shares}}</li>
+    <li>TotalSpent: {{this.TotalSpent}}</li>
+    <li>PeopleReached: {{this.PeopleReached}}</li>
+    <li>Impressions: {{this.Impressions}}</li>
+    <li>startAge: {{this.startAge}}</li>
+    <li>endAge: {{this.endAge}}</li>
+    <li>location: {{this.location}}</li>
+    <li>daysCount: {{this.daysCount}}</li>
+    <li>spentAtDate: {{this.spentAtDate}}</li>
+    <br />
+    {{/each}}
+  </ul>
+</body>
+
+</html>
